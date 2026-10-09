@@ -30,7 +30,7 @@ export function Nav() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
-          compact ? "bg-ink/85 py-3 backdrop-blur-md" : "py-6"
+          compact ? "bg-ink/90 py-3 shadow-md border-b border-ivory/10 backdrop-blur-md" : "py-6"
         }`}
       >
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 md:px-10">

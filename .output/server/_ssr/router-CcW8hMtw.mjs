@@ -2,10 +2,10 @@ import { n as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
 import { _ as lazyRouteComponent, b as Link, f as Scripts, g as Outlet, h as createRouter, p as HeadContent, v as createFileRoute, x as useRouter, y as createRootRouteWithContext } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-xI1E_TTx.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CcW8hMtw.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-BO3Mlv95.css";
+var styles_default = "/assets/styles-CYsjjwq1.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -170,7 +170,7 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-D55Uw2hz.mjs");
+var $$splitComponentImporter = () => import("./routes-B6dDNZGm.mjs");
 var title = "RANGAVEDA — Sri Lankan Traditional Dance Academy | Kandyan Dance Classes";
 var description = "Kandyan and Sri Lankan traditional dance classes for children, teenagers and young dancers. Book a trial class at RANGAVEDA — where heritage finds its rhythm.";
 var jsonLd = {
