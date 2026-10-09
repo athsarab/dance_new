@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import hero from "@/assets/hero-dancer.jpg";
@@ -7,6 +8,8 @@ import feet from "@/assets/feet.jpg";
 import group1 from "@/assets/new/group1.jpg";
 import group4 from "@/assets/new/group4.jpg";
 import group8 from "@/assets/new/group8.jpg";
+import teacher1 from "@/assets/new/teacher1.jpg";
+import teacher2 from "@/assets/new/teacher2.jpg";
 import { CircleButton, MaskText, Reveal, RevealImage, SectionLabel, ease } from "./primitives";
 
 /* ---------------- HERO ---------------- */
@@ -403,49 +406,71 @@ export function Principles() {
 }
 
 /* ---------------- TEACHERS ---------------- */
-const teachers = [
-  { name: "Teacher Name", role: "Kandyan dance · Lead instructor", yrs: "— years teaching", bio: "Placeholder profile. Replace with the teacher's real biography, training lineage and photograph." },
-  { name: "Teacher Name", role: "Low Country dance", yrs: "— years teaching", bio: "Placeholder profile. Replace with the teacher's real biography and photograph." },
-  { name: "Teacher Name", role: "Geta bera & drumming", yrs: "— years teaching", bio: "Placeholder profile. Replace with the drummer's real biography and photograph." },
-];
-
-function PortraitPlaceholder({ label }: { label: string }) {
-  return (
-    <div className="relative grid aspect-[3/4] place-items-center overflow-hidden border border-ink/15 bg-ivory shadow-sm transition-all duration-500 hover:shadow-md" data-cursor="VIEW STORY">
-      <div className="absolute inset-5 border border-maroon/25" />
-      <div className="absolute inset-0 opacity-15 [background-image:repeating-linear-gradient(135deg,transparent_0_14px,color-mix(in_oklab,var(--maroon)_50%,transparent)_14px_15px)]" />
-      <span className="eyebrow relative bg-maroon px-3 py-2 text-[0.6rem] tracking-widest text-ivory">{label}</span>
-    </div>
-  );
-}
-
 export function Teachers() {
   return (
     <section className="relative w-full bg-ivory py-28 text-ink md:py-40">
       <p className="eyebrow absolute left-4 top-40 hidden origin-top-left rotate-90 translate-x-4 whitespace-nowrap text-maroon md:block">
-        Meet the people behind the movement
+        The founder behind the movement
       </p>
       <div className="mx-auto max-w-[1600px] px-5 md:px-16">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <MaskText lines={["The hands that", "pass it on."]} className="display text-[clamp(2.8rem,6vw,6rem)] text-ink" />
-          <p className="eyebrow text-maroon md:hidden">Meet the people behind the movement</p>
-        </div>
-        <div className="mt-16 grid gap-10 md:grid-cols-12">
-          {teachers.map((t, i) => (
-            <Reveal
-              key={i}
-              delay={i * 0.12}
-              className={i === 0 ? "md:col-span-5" : i === 1 ? "md:col-span-3 md:col-start-7 md:mt-32" : "md:col-span-3 md:mt-12"}
-            >
-              <PortraitPlaceholder label="Portrait placeholder" />
-              <div className="mt-5 border-t border-ink/20 pt-4">
-                <h3 className="display text-3xl text-ink">{t.name}</h3>
-                <p className="eyebrow mt-2 text-terracotta">{t.role}</p>
-                <p className="eyebrow mt-1 text-ink/50">{t.yrs}</p>
-                <p className="mt-3 max-w-xs text-sm text-ink/75">{t.bio}</p>
+        <div className="grid gap-16 md:grid-cols-12 md:gap-10">
+          {/* Left Column - Large Image */}
+          <div className="md:col-span-7">
+            <RevealImage src={teacher1} alt="Founder portrait" w={800} h={1066} className="aspect-[3/4] w-full" />
+          </div>
+
+          {/* Right Column - Info */}
+          <div className="flex flex-col justify-center md:col-span-5 md:pl-10">
+            <SectionLabel n="05" label="The founder" />
+            
+            <div className="mt-12">
+              <MaskText lines={["The hand that", "guides."]} className="display text-[clamp(2.8rem,5vw,5rem)] text-ink" />
+            </div>
+            
+            <Reveal className="mt-8">
+              <h3 className="display text-4xl text-ink">Guru [Name]</h3>
+              <p className="eyebrow mt-3 text-terracotta">Founder · Lead Instructor</p>
+              
+              <p className="mt-6 max-w-md text-base leading-relaxed text-ink/80">
+                Trained in the classical Kandyan tradition under renowned masters, she brings over two decades of experience to the academy. Her vision preserves ancient techniques while inspiring the next generation of dancers.
+              </p>
+
+              <div className="mt-10 w-48">
+                <RevealImage src={teacher2} alt="Teacher teaching" w={640} h={480} className="aspect-[4/3] w-full" />
               </div>
+
+              {/* Decorative motif-border divider */}
+              <div className="mt-12 flex w-full items-center opacity-40">
+                <div className="size-1.5 rotate-45 bg-maroon"></div>
+                <div className="h-px flex-1 bg-maroon"></div>
+                <div className="size-1.5 rotate-45 bg-maroon"></div>
+              </div>
+
+              {/* Stats */}
+              <div className="mt-10 flex gap-8">
+                <div>
+                  <p className="display text-3xl text-ink">25+</p>
+                  <p className="eyebrow mt-1 text-[0.65rem] text-ink/60">Teaching</p>
+                </div>
+                <div>
+                  <p className="display text-3xl text-ink">500+</p>
+                  <p className="eyebrow mt-1 text-[0.65rem] text-ink/60">Students</p>
+                </div>
+                <div>
+                  <p className="display text-3xl text-ink">3</p>
+                  <p className="eyebrow mt-1 text-[0.65rem] text-ink/60">National awards</p>
+                </div>
+              </div>
+
+              {/* Link */}
+              <Link to="/teacher" data-cursor="VIEW STORY" className="group mt-12 flex items-center gap-5">
+                <span className="grid size-14 shrink-0 place-items-center border border-ink/30 text-ink transition-all duration-700 group-hover:bg-maroon group-hover:text-ivory group-hover:border-maroon">
+                  <span className="text-lg transition-transform duration-700 group-hover:-rotate-45">→</span>
+                </span>
+                <span className="eyebrow text-[0.72rem] text-ink/80 transition-[letter-spacing] duration-700 group-hover:tracking-[0.42em]">Discover her journey</span>
+              </Link>
             </Reveal>
-          ))}
+          </div>
         </div>
       </div>
     </section>
@@ -467,7 +492,7 @@ export function Events() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <div className="grid grid-cols-12 gap-y-10">
           <div className="col-span-12 md:col-span-4">
-            <SectionLabel n="05" label="Performances" />
+            <SectionLabel n="06" label="Performances" />
             <MaskText lines={["When the stage", "comes alive."]} className="display mt-8 text-[clamp(2.8rem,5vw,5rem)] text-ivory" />
             <p className="eyebrow mt-6 text-ivory/60">Sample dates — confirm with the academy</p>
           </div>
@@ -521,7 +546,7 @@ export function Gallery() {
         <div className="flex items-end justify-between">
           <h2 className="display text-[clamp(3rem,8vw,8rem)] italic text-maroon">Moments</h2>
           <div className="flex items-center gap-4 text-maroon">
-            <span className="display text-2xl italic">06</span>
+            <span className="display text-2xl italic">07</span>
             <span className="h-px w-12 bg-maroon/40" />
             <span className="eyebrow">Gallery</span>
           </div>
