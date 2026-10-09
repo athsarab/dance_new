@@ -1,79 +1,151 @@
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import hero from "@/assets/hero-dancer.jpg";
 import drums from "@/assets/drums.jpg";
 import children from "@/assets/children.jpg";
 import feet from "@/assets/feet.jpg";
+import group1 from "@/assets/new/group1.jpg";
+import group4 from "@/assets/new/group4.jpg";
+import group8 from "@/assets/new/group8.jpg";
 import { CircleButton, MaskText, Reveal, RevealImage, SectionLabel, ease } from "./primitives";
 
 /* ---------------- HERO ---------------- */
+const heroSlides = [
+  {
+    src: group4,
+    alt: "Sri Lankan dancers gathered in traditional costume",
+    label: "The collective / Kandyan movement",
+    theme: "from-[#120c12]/95 via-[#2b161d]/55 to-[#120c12]/20",
+    imageClass: "object-[58%_42%] saturate-[0.72]",
+  },
+  {
+    src: group8,
+    alt: "Young dancers moving together in rehearsal",
+    label: "The next generation / Shared rhythm",
+    theme: "from-[#08151a]/95 via-[#12343a]/50 to-[#08151a]/15",
+    imageClass: "object-[52%_46%] saturate-[0.82] hue-rotate-[8deg]",
+  },
+  {
+    src: group1,
+    alt: "A Sri Lankan dancer in traditional costume",
+    label: "The individual / A living archive",
+    theme: "from-[#21100e]/95 via-[#6a2d20]/48 to-[#21100e]/15",
+    imageClass: "object-[50%_32%] saturate-[0.78] sepia-[0.12]",
+  },
+];
+
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1.15]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.12]);
+  const slide = heroSlides[activeSlide];
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % heroSlides.length);
+    }, 6500);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
-    <section ref={ref} id="top" className="grain relative min-h-[100svh] overflow-hidden">
-      <div className="mx-auto grid min-h-[100svh] max-w-[1600px] grid-cols-12 px-5 pb-10 pt-28 md:px-10">
-        {/* vertical side typography */}
-        <div className="col-span-1 hidden items-end md:flex">
-          <p className="eyebrow origin-bottom-left -rotate-90 translate-x-4 whitespace-nowrap text-ivory/60">
-            Sri Lanka &nbsp;/&nbsp; Traditional Dance &nbsp;/&nbsp; Est. 2018
-          </p>
-        </div>
-
-        {/* image */}
-        <motion.div
-          className="relative col-span-12 h-[62svh] overflow-hidden md:col-span-7 md:col-start-5 md:h-auto"
-          initial={{ clipPath: "inset(0 0 100% 0)" }}
-          animate={{ clipPath: "inset(0 0 0% 0)" }}
-          transition={{ duration: 1.8, ease }}
-          data-cursor="VIEW STORY"
-        >
-          <motion.img
-            src={hero}
-            alt="A Kandyan dancer mid-leap in traditional ves costume"
-            width={1280}
-            height={1600}
-            style={{ y, scale }}
-            className="h-full w-full object-cover object-[50%_25%]"
-          />
-          <span className="eyebrow absolute bottom-3 right-3 bg-ink/70 px-2 py-1 text-[0.55rem] text-ivory/70">
-            Illustrative image
-          </span>
-        </motion.div>
-      </div>
-
-      {/* movement lines */}
-      <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 1600 1000" preserveAspectRatio="none" aria-hidden>
-        <path className="animate-draw" d="M-20 720 C 300 560, 520 900, 820 640 S 1300 300, 1640 460" fill="none" stroke="var(--gold)" strokeOpacity=".45" strokeWidth="1" />
-        <path className="animate-draw [animation-delay:1s]" d="M-20 780 C 340 640, 560 960, 860 700 S 1320 380, 1640 540" fill="none" stroke="var(--terracotta)" strokeOpacity=".5" strokeWidth="1" />
-      </svg>
-
-      {/* headline overlapping */}
-      <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1600px] px-5 pb-10 md:px-10 md:pb-16">
-        <MaskText
-          as="h1"
-          delay={0.7}
-          lines={["Where heritage", "finds its rhythm."]}
-          className="display max-w-[14ch] text-[clamp(3.2rem,9.5vw,10rem)] text-ivory md:ml-[8%]"
-        />
-        <div className="mt-8 flex flex-col gap-8 md:ml-[8%] md:flex-row md:items-end md:justify-between">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.6, duration: 1 }}
-            className="max-w-sm text-sm leading-relaxed text-ivory/75"
+    <section ref={ref} id="top" className="grain relative min-h-[100svh] overflow-hidden bg-ink">
+      <div className="absolute inset-0" data-cursor="VIEW STORY">
+        <AnimatePresence initial={false} mode="sync">
+          <motion.div
+            key={slide.src}
+            className="absolute inset-0"
+            initial={{ opacity: 0, clipPath: "inset(0 0 0 100%)" }}
+            animate={{ opacity: 1, clipPath: "inset(0 0 0 0%)" }}
+            exit={{ opacity: 0, clipPath: "inset(0 100% 0 0)" }}
+            transition={{ duration: 1.45, ease }}
           >
-            Sri Lankan traditional dance, presented for a new generation. Kandyan, Low Country and
-            Sabaragamuwa — taught to children, teenagers and young dancers.
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.9, duration: 1, ease }}>
-            <CircleButton label="Explore the academy" href="#academy" />
+            <motion.img
+              src={slide.src}
+              alt={slide.alt}
+              width={1600}
+              height={1066}
+              style={{ y, scale }}
+              initial={{ scale: 1.14, x: "2%" }}
+              animate={{ scale: 1, x: "0%" }}
+              transition={{ duration: 7, ease: "linear" }}
+              className={`h-full w-full object-cover ${slide.imageClass}`}
+            />
+            <div className={`absolute inset-0 bg-gradient-to-r ${slide.theme}`} />
+            <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(13,11,16,0.9)_0%,transparent_42%,rgba(13,11,16,0.3)_100%)]" />
           </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col px-5 pb-8 pt-28 md:px-10 md:pb-10">
+        <div className="flex items-start justify-between border-t border-ivory/20 pt-4">
+          <p className="eyebrow text-ivory/70">Rangaveda / Movement archive</p>
+          <p className="eyebrow hidden text-right text-ivory/60 sm:block">Colombo, Sri Lanka<br />06°55'N / 79°51'E</p>
+        </div>
+
+        <div className="mt-auto grid grid-cols-12 items-end gap-y-10">
+          <div className="col-span-12 md:col-span-9">
+            <p className="eyebrow mb-5 flex items-center gap-3 text-gold">
+              <span className="h-px w-10 bg-gold" />
+              A living practice / Est. 2018
+            </p>
+            <MaskText
+              as="h1"
+              delay={0.7}
+              lines={["Where heritage", "finds its", "rhythm."]}
+              className="display max-w-[9ch] text-[clamp(4.6rem,11.5vw,12rem)] text-ivory"
+            />
+          </div>
+          <div className="col-span-12 flex flex-col gap-8 md:col-span-3 md:items-end">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.6, duration: 1 }}
+              className="max-w-xs text-sm leading-relaxed text-ivory/75 md:text-right"
+            >
+              Traditional dance, retold with precision, pride and a pulse for the next generation.
+            </motion.p>
+            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.9, duration: 1, ease }}>
+              <CircleButton label="Enter the academy" href="#academy" />
+            </motion.div>
+          </div>
+        </div>
+
+        <div className="mt-10 flex items-center gap-4 border-t border-ivory/25 pt-4">
+          <span className="eyebrow min-w-fit text-[0.58rem] text-gold">{slide.label}</span>
+          <span className="h-px flex-1 bg-ivory/30" />
+          <div className="flex items-center gap-3" aria-label="Hero image selection">
+            {heroSlides.map((heroSlide, index) => (
+              <button
+                key={heroSlide.src}
+                type="button"
+                aria-label={`Show hero image ${index + 1}`}
+                aria-pressed={activeSlide === index}
+                onClick={() => setActiveSlide(index)}
+                className="group flex items-center gap-2 py-2"
+              >
+                <span className={`block h-px transition-all duration-500 ${activeSlide === index ? "w-8 bg-gold" : "w-3 bg-ivory/40 group-hover:bg-ivory"}`} />
+                <span className="sr-only">{heroSlide.label}</span>
+              </button>
+            ))}
+            <span className="display ml-1 text-xl italic text-ivory/70">
+              {String(activeSlide + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}
+            </span>
+          </div>
         </div>
       </div>
+
+      <div className="pointer-events-none absolute bottom-[22%] left-[3.3%] z-10 hidden md:block">
+        <p className="eyebrow origin-bottom-left -rotate-90 whitespace-nowrap text-ivory/60">
+          Sri Lanka&nbsp;&nbsp;/&nbsp;&nbsp;Traditional Dance&nbsp;&nbsp;/&nbsp;&nbsp;A living archive
+        </p>
+      </div>
+
+      <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full" viewBox="0 0 1600 1000" preserveAspectRatio="none" aria-hidden>
+        <path className="animate-draw" d="M-20 780 C 300 650, 520 920, 820 700 S 1300 380, 1640 500" fill="none" stroke="var(--gold)" strokeOpacity=".4" strokeWidth="1" />
+      </svg>
     </section>
   );
 }
