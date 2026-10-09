@@ -91,9 +91,7 @@ export function RevealImage({
         loading={eager ? "eager" : "lazy"}
         className={`h-full w-full object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-[1.05] ${imgClassName}`}
       />
-      <figcaption className="eyebrow absolute bottom-2 right-2 bg-ink/70 px-2 py-1 text-[0.55rem] text-ivory/70">
-        Illustrative image
-      </figcaption>
+ 
     </motion.figure>
   );
 }

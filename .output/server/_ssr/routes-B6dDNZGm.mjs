@@ -171,7 +171,7 @@ function RevealImage({ src, alt, className = "", imgClassName = "", w, h, cursor
 			className: `h-full w-full object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-[1.05] ${imgClassName}`
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("figcaption", {
 			className: "eyebrow absolute bottom-2 right-2 bg-ink/70 px-2 py-1 text-[0.55rem] text-ivory/70",
-			children: "Illustrative image"
+			children: ""
 		})]
 	});
 }
@@ -402,7 +402,7 @@ function Hero() {
 						className: "h-full w-full object-cover object-[50%_25%]"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 						className: "eyebrow absolute bottom-3 right-3 bg-ink/70 px-2 py-1 text-[0.55rem] text-ivory/70",
-						children: "Illustrative image"
+						children: ""
 					})]
 				})]
 			}),
