@@ -16,6 +16,20 @@ globalThis.__nitro_vite_envs__ = services;
 //#endregion
 //#region #nitro/virtual/public-assets-data
 var public_assets_data_default = {
+	"/assets/feet-CHmmryde.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"20e7f-G8hgue9ILHTDgU/mJ9t70yaUeKE\"",
+		"mtime": "2026-10-09T16:15:01.996Z",
+		"size": 134783,
+		"path": "../public/assets/feet-CHmmryde.jpg"
+	},
+	"/assets/children-DXHWfd_I.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"223e4-bejFQJRvhO/Zrmn23C5kMphy6yo\"",
+		"mtime": "2026-10-09T16:15:01.994Z",
+		"size": 140260,
+		"path": "../public/assets/children-DXHWfd_I.jpg"
+	},
 	"/robots.txt": {
 		"type": "text/plain; charset=utf-8",
 		"etag": "\"a0-CKGXSIe7TSsqDTmGm/nY1t/o5d0\"",
@@ -23,52 +37,38 @@ var public_assets_data_default = {
 		"size": 160,
 		"path": "../public/robots.txt"
 	},
-	"/assets/feet-CHmmryde.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"20e7f-G8hgue9ILHTDgU/mJ9t70yaUeKE\"",
-		"mtime": "2026-10-09T07:48:50.781Z",
-		"size": 134783,
-		"path": "../public/assets/feet-CHmmryde.jpg"
-	},
 	"/assets/drums-Cueabjs7.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"1dd96-6HCSn1pWUNAN/TRgS8YoSw+5nOY\"",
-		"mtime": "2026-10-09T07:48:50.781Z",
+		"mtime": "2026-10-09T16:15:01.995Z",
 		"size": 122262,
 		"path": "../public/assets/drums-Cueabjs7.jpg"
 	},
-	"/assets/index-bGWOP9KU.js": {
+	"/assets/index-DQ39_Pur.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5a220-hG38rw7DjeBPBPmpcwj3bvQB4l8\"",
-		"mtime": "2026-10-09T07:48:50.779Z",
+		"etag": "\"5a220-rr89mM0jMIGHMKukp6wgHmFZNjo\"",
+		"mtime": "2026-10-09T16:15:01.994Z",
 		"size": 369184,
-		"path": "../public/assets/index-bGWOP9KU.js"
+		"path": "../public/assets/index-DQ39_Pur.js"
 	},
-	"/assets/children-DXHWfd_I.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"223e4-bejFQJRvhO/Zrmn23C5kMphy6yo\"",
-		"mtime": "2026-10-09T07:48:50.779Z",
-		"size": 140260,
-		"path": "../public/assets/children-DXHWfd_I.jpg"
-	},
-	"/assets/routes-DJxxJwSM.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"32382-zteSf/ynLw7D/TWsvn2zKYRd5Lg\"",
-		"mtime": "2026-10-09T07:48:50.779Z",
-		"size": 205698,
-		"path": "../public/assets/routes-DJxxJwSM.js"
-	},
-	"/assets/styles-BO3Mlv95.css": {
+	"/assets/styles-CYsjjwq1.css": {
 		"type": "text/css; charset=utf-8",
-		"etag": "\"1642a-mBfIJC/u34HoL+VQYCrNkyhwK1I\"",
-		"mtime": "2026-10-09T07:48:50.787Z",
-		"size": 91178,
-		"path": "../public/assets/styles-BO3Mlv95.css"
+		"etag": "\"169a9-vhhBcXSWx888hjyKH+NKrOIAOwY\"",
+		"mtime": "2026-10-09T16:15:01.997Z",
+		"size": 92585,
+		"path": "../public/assets/styles-CYsjjwq1.css"
+	},
+	"/assets/routes-DCvD0ayV.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"3272b-UV+GvnFqOCSSEp9DadelNAPLWxM\"",
+		"mtime": "2026-10-09T16:15:01.994Z",
+		"size": 206635,
+		"path": "../public/assets/routes-DCvD0ayV.js"
 	},
 	"/assets/hero-dancer-DOj_i_-Z.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"2874a-6NRadbwGC2/7elnjhv8g7+0DvAU\"",
-		"mtime": "2026-10-09T07:48:50.787Z",
+		"mtime": "2026-10-09T16:15:01.997Z",
 		"size": 165706,
 		"path": "../public/assets/hero-dancer-DOj_i_-Z.jpg"
 	}

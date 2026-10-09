@@ -8,7 +8,8 @@ const field = "w-full border-0 border-b border-ivory/25 bg-transparent py-4 text
 export function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <footer id="contact" className="mx-auto max-w-[1600px] px-5 pt-28 md:px-10 md:pt-40">
+    <footer id="contact" className="relative w-full bg-ink pt-28 md:pt-40">
+      <div className="mx-auto max-w-[1600px] px-5 md:px-10">
       <div className="grid grid-cols-12 gap-y-16 md:gap-x-10">
         <div className="col-span-12 md:col-span-5">
           <SectionLabel n="08" label="Contact" />
@@ -61,6 +62,7 @@ export function Contact() {
         </div>
       </div>
       <p className="eyebrow pb-8 text-[0.6rem] text-ivory/40">© RANGAVEDA Sri Lankan Traditional Dance Academy</p>
+      </div>
     </footer>
   );
 }

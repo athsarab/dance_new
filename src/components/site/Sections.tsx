@@ -81,7 +81,8 @@ export function Hero() {
 /* ---------------- STATEMENT + ROOTS ---------------- */
 export function Roots() {
   return (
-    <section id="academy" className="relative mx-auto max-w-[1600px] px-5 py-28 md:px-10 md:py-44">
+    <section id="academy" className="relative w-full bg-ink py-28 md:py-44">
+      <div className="mx-auto max-w-[1600px] px-5 md:px-10">
       <div className="grid grid-cols-12 gap-y-14">
         <MaskText
           lines={["Tradition", "is not", "still."]}
@@ -121,6 +122,7 @@ export function Roots() {
           <RevealImage src={feet} alt="Ankle bells on a dancer's feet" w={1024} h={1280} className="col-span-3 col-start-4 -mt-24 aspect-[4/5] border-8 border-ink md:-mt-40" />
         </div>
       </div>
+      </div>
     </section>
   );
 }
@@ -145,12 +147,12 @@ export function DanceForms() {
         <img src={f.alt} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-0 transition-all duration-[1.4s] ease-out group-hover:scale-100 group-hover:opacity-100" />
         <span className="display absolute left-5 top-4 text-6xl italic text-ivory/90">{f.n}</span>
       </div>
-      <div className="mt-6 flex items-start justify-between gap-6 border-t border-border pt-5">
+      <div className="mt-6 flex items-start justify-between gap-6 border-t border-ivory/20 pt-5">
         <div>
-          <h3 className="display text-3xl md:text-4xl">{f.t}</h3>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory/65">{f.d}</p>
+          <h3 className="display text-3xl md:text-4xl text-ivory">{f.t}</h3>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory/75">{f.d}</p>
         </div>
-        <span className="grid size-12 shrink-0 place-items-center rounded-full border border-ivory/40 transition-all duration-700 group-hover:-rotate-45 group-hover:bg-terracotta group-hover:border-terracotta">→</span>
+        <span className="grid size-12 shrink-0 place-items-center rounded-full border border-ivory/40 text-ivory transition-all duration-700 group-hover:-rotate-45 group-hover:bg-gold group-hover:text-ink group-hover:border-gold">→</span>
       </div>
     </article>
   );
@@ -203,7 +205,7 @@ function Wave() {
 export function NextGeneration() {
   const [active, setActive] = useState(0);
   return (
-    <section id="young" className="relative overflow-hidden py-28 md:py-40">
+    <section id="young" className="relative w-full overflow-hidden bg-ink py-28 md:py-40">
       <AnimatePresence mode="sync">
         <motion.img
           key={active}
@@ -290,36 +292,38 @@ const principles = [
 
 export function Principles() {
   return (
-    <section className="mx-auto max-w-[1600px] px-5 py-28 md:px-10 md:py-40">
-      <div className="grid grid-cols-12 gap-y-12">
-        <div className="col-span-12 md:col-span-4">
-          <SectionLabel n="04" label="Why parents choose us" />
-          <Reveal delay={0.1}>
-            <p className="mt-8 max-w-sm leading-relaxed text-ivory/75">
-              Children learn traditional movement while developing confidence, coordination and a
-              lasting appreciation for Sri Lankan culture — in small classes, with patient teachers.
-            </p>
-          </Reveal>
-        </div>
-        <div className="relative col-span-12 md:col-span-7 md:col-start-6">
-          <motion.span
-            className="absolute left-3 top-0 w-px origin-top bg-gold/50"
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 2.4, ease }}
-            style={{ height: "100%" }}
-          />
-          {principles.map(([t, d], i) => (
-            <Reveal key={t} delay={i * 0.15} className={`relative py-8 pl-12 ${i % 2 ? "md:pl-40" : ""}`}>
-              <span className="absolute left-[9px] top-[3.3rem] size-2 rotate-45 bg-gold" />
-              <div className="flex items-baseline gap-6">
-                <h3 className="display text-[clamp(2.6rem,6vw,6rem)] uppercase">{t}</h3>
-                <span className="display text-xl italic text-gold">0{i + 1}</span>
-              </div>
-              <p className="mt-2 max-w-sm text-sm text-ivory/60">{d}</p>
+    <section className="relative w-full bg-ink py-28 md:py-40">
+      <div className="mx-auto max-w-[1600px] px-5 md:px-10">
+        <div className="grid grid-cols-12 gap-y-12">
+          <div className="col-span-12 md:col-span-4">
+            <SectionLabel n="04" label="Why parents choose us" />
+            <Reveal delay={0.1}>
+              <p className="mt-8 max-w-sm leading-relaxed text-ivory/75">
+                Children learn traditional movement while developing confidence, coordination and a
+                lasting appreciation for Sri Lankan culture — in small classes, with patient teachers.
+              </p>
             </Reveal>
-          ))}
+          </div>
+          <div className="relative col-span-12 md:col-span-7 md:col-start-6">
+            <motion.span
+              className="absolute left-3 top-0 w-px origin-top bg-gold/50"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2.4, ease }}
+              style={{ height: "100%" }}
+            />
+            {principles.map(([t, d], i) => (
+              <Reveal key={t} delay={i * 0.15} className={`relative py-8 pl-12 ${i % 2 ? "md:pl-40" : ""}`}>
+                <span className="absolute left-[9px] top-[3.3rem] size-2 rotate-45 bg-gold" />
+                <div className="flex items-baseline gap-6">
+                  <h3 className="display text-[clamp(2.6rem,6vw,6rem)] uppercase">{t}</h3>
+                  <span className="display text-xl italic text-gold">0{i + 1}</span>
+                </div>
+                <p className="mt-2 max-w-sm text-sm text-ivory/60">{d}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -335,23 +339,23 @@ const teachers = [
 
 function PortraitPlaceholder({ label }: { label: string }) {
   return (
-    <div className="relative grid aspect-[3/4] place-items-center overflow-hidden bg-card" data-cursor="VIEW STORY">
-      <div className="absolute inset-6 border border-gold/30" />
-      <div className="absolute inset-0 opacity-30 [background-image:repeating-linear-gradient(135deg,transparent_0_14px,color-mix(in_oklab,var(--gold)_40%,transparent)_14px_15px)]" />
-      <span className="eyebrow relative bg-ink px-3 py-2 text-[0.6rem] text-ivory/60">{label}</span>
+    <div className="relative grid aspect-[3/4] place-items-center overflow-hidden border border-ink/15 bg-ivory shadow-sm transition-all duration-500 hover:shadow-md" data-cursor="VIEW STORY">
+      <div className="absolute inset-5 border border-maroon/25" />
+      <div className="absolute inset-0 opacity-15 [background-image:repeating-linear-gradient(135deg,transparent_0_14px,color-mix(in_oklab,var(--maroon)_50%,transparent)_14px_15px)]" />
+      <span className="eyebrow relative bg-maroon px-3 py-2 text-[0.6rem] tracking-widest text-ivory">{label}</span>
     </div>
   );
 }
 
 export function Teachers() {
   return (
-    <section className="relative bg-ivory py-28 text-ink md:py-40">
+    <section className="relative w-full bg-ivory py-28 text-ink md:py-40">
       <p className="eyebrow absolute left-4 top-40 hidden origin-top-left rotate-90 translate-x-4 whitespace-nowrap text-maroon md:block">
         Meet the people behind the movement
       </p>
       <div className="mx-auto max-w-[1600px] px-5 md:px-16">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <MaskText lines={["The hands that", "pass it on."]} className="display text-[clamp(2.8rem,6vw,6rem)]" />
+          <MaskText lines={["The hands that", "pass it on."]} className="display text-[clamp(2.8rem,6vw,6rem)] text-ink" />
           <p className="eyebrow text-maroon md:hidden">Meet the people behind the movement</p>
         </div>
         <div className="mt-16 grid gap-10 md:grid-cols-12">
@@ -363,10 +367,10 @@ export function Teachers() {
             >
               <PortraitPlaceholder label="Portrait placeholder" />
               <div className="mt-5 border-t border-ink/20 pt-4">
-                <h3 className="display text-3xl">{t.name}</h3>
+                <h3 className="display text-3xl text-ink">{t.name}</h3>
                 <p className="eyebrow mt-2 text-terracotta">{t.role}</p>
                 <p className="eyebrow mt-1 text-ink/50">{t.yrs}</p>
-                <p className="mt-3 max-w-xs text-sm text-ink/70">{t.bio}</p>
+                <p className="mt-3 max-w-xs text-sm text-ink/75">{t.bio}</p>
               </div>
             </Reveal>
           ))}
@@ -387,49 +391,51 @@ const events = [
 export function Events() {
   const [hover, setHover] = useState<number | null>(null);
   return (
-    <section id="events" className="mx-auto max-w-[1600px] px-5 py-28 md:px-10 md:py-40">
-      <div className="grid grid-cols-12 gap-y-10">
-        <div className="col-span-12 md:col-span-4">
-          <SectionLabel n="05" label="Performances" />
-          <MaskText lines={["When the stage", "comes alive."]} className="display mt-8 text-[clamp(2.8rem,5vw,5rem)]" />
-          <p className="eyebrow mt-6 text-ivory/50">Sample dates — confirm with the academy</p>
+    <section id="events" className="relative w-full bg-maroon py-28 text-ivory md:py-40">
+      <div className="mx-auto max-w-[1600px] px-5 md:px-10">
+        <div className="grid grid-cols-12 gap-y-10">
+          <div className="col-span-12 md:col-span-4">
+            <SectionLabel n="05" label="Performances" />
+            <MaskText lines={["When the stage", "comes alive."]} className="display mt-8 text-[clamp(2.8rem,5vw,5rem)] text-ivory" />
+            <p className="eyebrow mt-6 text-ivory/60">Sample dates — confirm with the academy</p>
+          </div>
+          <ul className="relative col-span-12 md:col-span-7 md:col-start-6" onMouseLeave={() => setHover(null)}>
+            {events.map((e, i) => (
+              <li
+                key={e.t}
+                data-cursor="VIEW"
+                onMouseEnter={() => setHover(i)}
+                className="group grid grid-cols-[4.5rem_1fr_auto] items-center gap-5 border-b border-ivory/20 py-7 transition-colors duration-300 hover:border-gold/60 md:grid-cols-[6rem_1fr_auto]"
+              >
+                <div className="leading-none">
+                  <span className="display block text-5xl text-gold md:text-6xl">{e.d}</span>
+                  <span className="eyebrow text-ivory/70">{e.m}</span>
+                </div>
+                <div className="transition-transform duration-700 group-hover:translate-x-3">
+                  <h3 className="display text-2xl text-ivory md:text-4xl">{e.t}</h3>
+                  <p className="eyebrow mt-2 text-ivory/60">{e.p}</p>
+                </div>
+                <span className="text-xl text-ivory/80 transition-transform duration-700 group-hover:-rotate-45 group-hover:text-gold">→</span>
+              </li>
+            ))}
+            <AnimatePresence>
+              {hover !== null && (
+                <motion.img
+                  key={hover}
+                  src={events[hover]!.img}
+                  alt=""
+                  aria-hidden
+                  initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 2 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5, ease }}
+                  className="pointer-events-none absolute -left-72 hidden aspect-[3/4] w-56 object-cover shadow-2xl border-4 border-ink/40 lg:block"
+                  style={{ top: hover * 120 }}
+                />
+              )}
+            </AnimatePresence>
+          </ul>
         </div>
-        <ul className="relative col-span-12 md:col-span-7 md:col-start-6" onMouseLeave={() => setHover(null)}>
-          {events.map((e, i) => (
-            <li
-              key={e.t}
-              data-cursor="VIEW"
-              onMouseEnter={() => setHover(i)}
-              className="group grid grid-cols-[4.5rem_1fr_auto] items-center gap-5 border-b border-border py-7 md:grid-cols-[6rem_1fr_auto]"
-            >
-              <div className="leading-none">
-                <span className="display block text-5xl text-gold md:text-6xl">{e.d}</span>
-                <span className="eyebrow">{e.m}</span>
-              </div>
-              <div className="transition-transform duration-700 group-hover:translate-x-3">
-                <h3 className="display text-2xl md:text-4xl">{e.t}</h3>
-                <p className="eyebrow mt-2 text-ivory/50">{e.p}</p>
-              </div>
-              <span className="text-xl transition-transform duration-700 group-hover:-rotate-45">→</span>
-            </li>
-          ))}
-          <AnimatePresence>
-            {hover !== null && (
-              <motion.img
-                key={hover}
-                src={events[hover]!.img}
-                alt=""
-                aria-hidden
-                initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
-                animate={{ opacity: 1, scale: 1, rotate: 2 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, ease }}
-                className="pointer-events-none absolute -left-72 hidden aspect-[3/4] w-56 object-cover lg:block"
-                style={{ top: hover * 120 }}
-              />
-            )}
-          </AnimatePresence>
-        </ul>
       </div>
     </section>
   );
@@ -438,26 +444,30 @@ export function Events() {
 /* ---------------- GALLERY ---------------- */
 export function Gallery() {
   return (
-    <section id="gallery" className="relative overflow-hidden py-28 md:py-40">
+    <section id="gallery" className="relative w-full overflow-hidden bg-ivory py-28 text-ink md:py-40">
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <div className="flex items-end justify-between">
-          <h2 className="display text-[clamp(3rem,8vw,8rem)] italic text-clay">Moments</h2>
-          <SectionLabel n="06" label="Gallery" />
+          <h2 className="display text-[clamp(3rem,8vw,8rem)] italic text-maroon">Moments</h2>
+          <div className="flex items-center gap-4 text-maroon">
+            <span className="display text-2xl italic">06</span>
+            <span className="h-px w-12 bg-maroon/40" />
+            <span className="eyebrow">Gallery</span>
+          </div>
         </div>
         <div className="mt-16 grid grid-cols-6 gap-4 md:grid-cols-12 md:gap-6">
-          <RevealImage src={hero} alt="Kandyan dancer leap" w={1280} h={1600} className="col-span-4 aspect-[4/5] md:col-span-5" />
+          <RevealImage src={hero} alt="Kandyan dancer leap" w={1280} h={1600} className="col-span-4 aspect-[4/5] shadow-lg md:col-span-5" />
           <div className="col-span-2 flex flex-col justify-end md:col-span-3 md:col-start-7">
-            <p className="display text-lg italic text-ivory/70 md:text-2xl">“The leap is earned in the hundredth repetition.”</p>
+            <p className="display text-lg italic text-ink/80 md:text-2xl">“The leap is earned in the hundredth repetition.”</p>
           </div>
-          <RevealImage src={feet} alt="Ankle bells close-up" w={1024} h={1280} className="col-span-3 aspect-[3/4] md:col-span-3 md:col-start-10 md:-mt-40" />
-          <RevealImage src={children} alt="Children practising" w={1408} h={1024} className="col-span-6 aspect-[16/10] md:col-span-7 md:col-start-3 md:-mt-16 md:z-10 md:border-[10px] md:border-ink" />
-          <RevealImage src={drums} alt="Drummer's hands" w={1408} h={1024} className="col-span-3 aspect-square md:col-span-3 md:col-start-10 md:mt-24" />
+          <RevealImage src={feet} alt="Ankle bells close-up" w={1024} h={1280} className="col-span-3 aspect-[3/4] shadow-lg md:col-span-3 md:col-start-10 md:-mt-40" />
+          <RevealImage src={children} alt="Children practising" w={1408} h={1024} className="col-span-6 aspect-[16/10] shadow-2xl md:col-span-7 md:col-start-3 md:-mt-16 md:z-10 md:border-[10px] md:border-ivory" />
+          <RevealImage src={drums} alt="Drummer's hands" w={1408} h={1024} className="col-span-3 aspect-square shadow-lg md:col-span-3 md:col-start-10 md:mt-24" />
         </div>
       </div>
-      <div className="mt-24 overflow-hidden border-y border-border py-6">
+      <div className="mt-24 overflow-hidden border-y border-ink/20 bg-ink py-6 text-ivory">
         <div className="animate-marquee flex w-max gap-16 whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, k) => (
-            <span key={k} className="display flex gap-16 text-4xl italic text-ivory/30 md:text-6xl">
+            <span key={k} className="display flex gap-16 text-4xl italic text-ivory/50 md:text-6xl">
               <span>Kandyan</span><span className="text-gold">◆</span><span>Pahatharata</span><span className="text-gold">◆</span><span>Sabaragamuwa</span><span className="text-gold">◆</span><span>Geta Bera</span><span className="text-gold">◆</span>
             </span>
           ))}
@@ -470,7 +480,7 @@ export function Gallery() {
 /* ---------------- CTA ---------------- */
 export function FinalCta() {
   return (
-    <section className="grain relative overflow-hidden bg-terracotta py-32 md:py-48">
+    <section className="grain relative w-full overflow-hidden bg-terracotta py-32 md:py-48">
       <svg className="pointer-events-none absolute -right-40 top-1/2 size-[900px] -translate-y-1/2 opacity-25" viewBox="0 0 200 200" aria-hidden>
         {[90, 75, 60, 45, 30].map((r) => (
           <circle key={r} cx="100" cy="100" r={r} fill="none" stroke="var(--ivory)" strokeWidth=".3" />
