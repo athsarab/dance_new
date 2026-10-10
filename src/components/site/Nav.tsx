@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { ease } from "./primitives";
+import logo from "@/assets/logo1.jpg";
 
 export const navLinks = [
   ["Academy", "#academy"],
@@ -34,8 +35,8 @@ export function Nav() {
         }`}
       >
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 md:px-10">
-          <a href="#top" className="display text-xl tracking-[0.28em] text-ivory md:text-2xl" data-cursor="">
-            RANGAVEDA
+          <a href="#top" aria-label="Prashadi Art Academy home" className="flex shrink-0 items-center" data-cursor="">
+            <img src={logo} alt="Prashadi Art Academy — Dance to the beat of your dreams" className="h-12 w-auto object-contain sm:h-14" />
           </a>
           <nav aria-label="Primary" className="hidden lg:block">
             <ul className="flex gap-9">
@@ -92,7 +93,9 @@ export function Nav() {
               variants={{ closed: { opacity: 0 }, open: { opacity: 1, transition: { delay: 0.45 } } }}
             >
               <div className="flex items-center justify-between">
-                <span className="display text-xl tracking-[0.28em]">RANGAVEDA</span>
+                <a href="#top" onClick={() => setOpen(false)} aria-label="Prashadi Art Academy home">
+                  <img src={logo} alt="Prashadi Art Academy" className="h-12 w-auto object-contain" />
+                </a>
                 <button onClick={() => setOpen(false)} aria-label="Close menu" className="eyebrow h-11 px-2">
                   Close
                 </button>

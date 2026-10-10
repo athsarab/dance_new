@@ -21,7 +21,7 @@ import g2 from "@/assets/new/group2.jpg";
 export const Route = createFileRoute("/teacher")({
   head: () => ({
     meta: [
-      { title: "The Teacher — RANGAVEDA" },
+      { title: "The Teacher — Prashadi Art Academy" },
       {
         name: "description",
         content: "Meet the Guru: Three decades of devotion to Kandyan dance.",
@@ -53,7 +53,7 @@ function TeacherPage() {
         <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-12 md:p-24">
           <nav className="flex items-center justify-between">
             <Link to="/" className="eyebrow link-dance text-[0.7rem] text-ivory">
-              ← Back to RANGAVEDA
+              ← Back to Prashadi Art Academy
             </Link>
             <div className="eyebrow text-gold text-[0.7rem]">Guru Profile</div>
           </nav>
@@ -123,7 +123,7 @@ function TeacherPage() {
             {[
               { year: "1994", title: "National Arts Award", desc: "Awarded the prestigious Kalashoori title for outstanding contribution to traditional dance." },
               { year: "1998", title: "International Debut", desc: "Lead performer at the Festival of Asian Arts, showcasing Kandyan dance to a global audience." },
-              { year: "2005", title: "Founding of RANGAVEDA", desc: "Established the academy to formalize traditional training for the next generation." },
+              { year: "2005", title: "Founding of Prashadi Art Academy", desc: "Established the academy to formalize traditional training for the next generation." },
               { year: "2012", title: "Presidential Award", desc: "Honoured for lifetime achievements in preserving Sri Lankan cultural heritage." },
               { year: "2018", title: "10th Anniversary Grand Recital", desc: "Directed over 100 students in a historic performance at the Lionel Wendt Theatre." },
               { year: "2023", title: "Master's Guild Recognition", desc: "Recognized as a senior Guru by the traditional dance guild of Kandy." },

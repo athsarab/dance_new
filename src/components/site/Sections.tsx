@@ -84,8 +84,8 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col px-5 pb-8 pt-28 md:px-10 md:pb-10">
         <div className="flex items-start justify-between border-t border-ivory/20 pt-4">
-          <p className="eyebrow text-ivory/70">Rangaveda / Movement archive</p>
-          <p className="eyebrow hidden text-right text-ivory/60 sm:block">Colombo, Sri Lanka<br />06°55'N / 79°51'E</p>
+          <p className="eyebrow text-ivory/70">Prashadi Art Academy</p>
+          <p className="eyebrow hidden text-right text-ivory/60 sm:block">Kurunegala, Sri Lanka</p>
         </div>
 
         <div className="mt-auto grid grid-cols-12 items-end gap-y-10">

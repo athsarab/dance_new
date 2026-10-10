@@ -15,13 +15,13 @@ export function Contact() {
           <SectionLabel n="08" label="Contact" />
           <h2 className="display mt-8 text-[clamp(2.8rem,5vw,5rem)]">Begin the <em className="text-gold">journey.</em></h2>
           <dl className="mt-12 grid grid-cols-2 gap-8 text-sm">
-            <div><dt className="eyebrow text-clay">Studio</dt><dd className="mt-2 text-ivory/80">Address to be confirmed<br />Colombo, Sri Lanka</dd></div>
-            <div><dt className="eyebrow text-clay">Talk to us</dt><dd className="mt-2 text-ivory/80">+94 00 000 0000<br />hello@rangaveda.lk</dd></div>
-            <div><dt className="eyebrow text-clay">Classes</dt><dd className="mt-2 text-ivory/80">Wed & Thu · 4–7 pm<br />Sat · 8 am–1 pm</dd></div>
+            <div><dt className="eyebrow text-clay">Studio</dt><dd className="mt-2 text-ivory/80">Kurunegala, Sri Lanka</dd></div>
+            <div><dt className="eyebrow text-clay">Talk to us</dt><dd className="mt-2 text-ivory/80">Send an enquiry using the form</dd></div>
+            <div><dt className="eyebrow text-clay">Classes</dt><dd className="mt-2 text-ivory/80">Contact us for current class times</dd></div>
             <div><dt className="eyebrow text-clay">Follow</dt><dd className="mt-2 flex flex-col text-ivory/80"><a className="link-dance w-fit" href="#">Instagram</a><a className="link-dance w-fit" href="#">Facebook</a><a className="link-dance w-fit" href="#">YouTube</a></dd></div>
           </dl>
           <div className="mt-10 aspect-[16/9] overflow-hidden border border-border grayscale">
-            <iframe title="Academy location map" loading="lazy" className="h-full w-full" src="https://www.google.com/maps?q=Colombo,Sri+Lanka&output=embed" />
+            <iframe title="Prashadi Art Academy location in Kurunegala" loading="lazy" className="h-full w-full" src="https://www.google.com/maps?q=Kurunegala,Sri+Lanka&output=embed" />
           </div>
         </div>
 
@@ -56,12 +56,12 @@ export function Contact() {
 
       <div className="motif-border mt-28 opacity-50" />
       <div className="flex flex-col gap-8 py-10 md:flex-row md:items-end md:justify-between">
-        <p className="display text-[clamp(3rem,12vw,12rem)] leading-none tracking-[0.12em] text-ivory/90">RANGAVEDA</p>
+        <p className="display text-[clamp(2.5rem,10vw,9rem)] leading-none tracking-[0.04em] text-ivory/90">Prashadi Art Academy</p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 pb-4">
           {navLinks.map(([l, h]) => <a key={l} href={h} className="link-dance eyebrow text-ivory/60">{l}</a>)}
         </div>
       </div>
-      <p className="eyebrow pb-8 text-[0.6rem] text-ivory/40">© RANGAVEDA Sri Lankan Traditional Dance Academy</p>
+      <p className="eyebrow pb-8 text-[0.6rem] text-ivory/40">© Prashadi Art Academy · Kurunegala, Sri Lanka</p>
       </div>
     </footer>
   );

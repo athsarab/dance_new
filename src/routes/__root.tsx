@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import logo from "@/assets/logo1.jpg";
 
 function NotFoundComponent() {
   return (
@@ -78,8 +79,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "RANGAVEDA — Sri Lankan Traditional Dance Academy" },
-      { name: "description", content: "Sri Lankan traditional dance classes for a new generation." },
+      { title: "Prashadi Art Academy | Kurunegala" },
+      { name: "description", content: "Traditional dance classes at Prashadi Art Academy in Kurunegala, Sri Lanka." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -94,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: logo, type: "image/jpeg" },
     ],
   }),
   shellComponent: RootShell,
