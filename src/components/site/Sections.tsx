@@ -8,7 +8,7 @@ import feet from "@/assets/feet.jpg";
 import group1 from "@/assets/new/group1.jpg";
 import group4 from "@/assets/new/group4.jpg";
 import group8 from "@/assets/new/group8.jpg";
-import teacher1 from "@/assets/new/teacher1.jpg";
+import teacher1 from "@/assets/new/teacher7.jpg";
 import teacher2 from "@/assets/new/teacher2.jpg";
 import { CircleButton, MaskText, Reveal, RevealImage, SectionLabel, ease } from "./primitives";
 
@@ -428,7 +428,7 @@ export function Teachers() {
             </div>
             
             <Reveal className="mt-8">
-              <h3 className="display text-4xl text-ink">Guru [Name]</h3>
+              <h3 className="display text-4xl text-ink">Imasha Prashadi Weerasignhe</h3>
               <p className="eyebrow mt-3 text-terracotta">Founder · Lead Instructor</p>
               
               <p className="mt-6 max-w-md text-base leading-relaxed text-ink/80">
