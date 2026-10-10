@@ -1,11 +1,12 @@
 import { n as __toESM } from "../_runtime.mjs";
+import { t as logo1_default } from "./logo1-C-TmYdb2.mjs";
 import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
 import { _ as lazyRouteComponent, b as Link, f as Scripts, g as Outlet, h as createRouter, p as HeadContent, v as createFileRoute, x as useRouter, y as createRootRouteWithContext } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CcW8hMtw.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Mo_BnOPe.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CYsjjwq1.css";
+var styles_default = "/assets/styles-BYuPMYe1.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -105,7 +106,7 @@ function ErrorComponent({ error, reset }) {
 		})
 	});
 }
-var Route$1 = createRootRouteWithContext()({
+var Route$2 = createRootRouteWithContext()({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -113,10 +114,10 @@ var Route$1 = createRootRouteWithContext()({
 				name: "viewport",
 				content: "width=device-width, initial-scale=1"
 			},
-			{ title: "RANGAVEDA — Sri Lankan Traditional Dance Academy" },
+			{ title: "Prashadi Art Academy | Kurunegala" },
 			{
 				name: "description",
-				content: "Sri Lankan traditional dance classes for a new generation."
+				content: "Traditional dance classes at Prashadi Art Academy in Kurunegala, Sri Lanka."
 			},
 			{
 				property: "og:type",
@@ -147,8 +148,8 @@ var Route$1 = createRootRouteWithContext()({
 			},
 			{
 				rel: "icon",
-				href: "/favicon.ico",
-				type: "image/x-icon"
+				href: logo1_default,
+				type: "image/jpeg"
 			}
 		]
 	}),
@@ -164,28 +165,28 @@ function RootShell({ children }) {
 	});
 }
 function RootComponent() {
-	const { queryClient } = Route$1.useRouteContext();
+	const { queryClient } = Route$2.useRouteContext();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QueryClientProvider, {
 		client: queryClient,
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-B6dDNZGm.mjs");
-var title = "RANGAVEDA — Sri Lankan Traditional Dance Academy | Kandyan Dance Classes";
-var description = "Kandyan and Sri Lankan traditional dance classes for children, teenagers and young dancers. Book a trial class at RANGAVEDA — where heritage finds its rhythm.";
+var $$splitComponentImporter$1 = () => import("./routes-vC5uWkO7.mjs");
+var title = "Prashadi Art Academy | Traditional Dance Classes in Kurunegala";
+var description = "Prashadi Art Academy in Kurunegala offers Sri Lankan traditional dance classes for children, teenagers and young dancers.";
 var jsonLd = {
 	"@context": "https://schema.org",
 	"@type": ["DanceSchool", "EducationalOrganization"],
-	name: "RANGAVEDA Sri Lankan Traditional Dance Academy",
+	name: "Prashadi Art Academy",
 	slogan: "Where Heritage Finds Its Rhythm.",
 	foundingDate: "2018",
 	address: {
 		"@type": "PostalAddress",
-		addressLocality: "Colombo",
+		addressLocality: "Kurunegala",
 		addressCountry: "LK"
 	}
 };
-var rootRouteChildren = { IndexRoute: createFileRoute("/")({
+var Route$1 = createFileRoute("/")({
 	head: () => ({
 		meta: [
 			{ title },
@@ -215,13 +216,29 @@ var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 			children: JSON.stringify(jsonLd)
 		}]
 	}),
+	component: lazyRouteComponent($$splitComponentImporter$1, "component")
+});
+var $$splitComponentImporter = () => import("./teacher-Bjtk2pZw.mjs");
+var Route = createFileRoute("/teacher")({
+	head: () => ({ meta: [{ title: "The Teacher — Prashadi Art Academy" }, {
+		name: "description",
+		content: "Meet the Guru: Three decades of devotion to Kandyan dance."
+	}] }),
 	component: lazyRouteComponent($$splitComponentImporter, "component")
-}).update({
-	id: "/",
-	path: "/",
-	getParentRoute: () => Route$1
-}) };
-var routeTree = Route$1._addFileChildren(rootRouteChildren)._addFileTypes();
+});
+var rootRouteChildren = {
+	IndexRoute: Route$1.update({
+		id: "/",
+		path: "/",
+		getParentRoute: () => Route$2
+	}),
+	TeacherRoute: Route.update({
+		id: "/teacher",
+		path: "/teacher",
+		getParentRoute: () => Route$2
+	})
+};
+var routeTree = Route$2._addFileChildren(rootRouteChildren)._addFileTypes();
 var getRouter = () => {
 	const queryClient = new QueryClient();
 	return createRouter({

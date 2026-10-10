@@ -1,9 +1,12 @@
 import { n as __toESM } from "../_runtime.mjs";
 import { i as useScroll, n as useTransform, o as AnimatePresence, r as useMotionValue, s as performance_default, t as useSpring } from "../_libs/framer-motion+[...].mjs";
+import { t as logo1_default } from "./logo1-C-TmYdb2.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { n as toast, t as Toaster } from "../_libs/sonner.mjs";
+import { b as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as motion } from "../_libs/motion.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-B6dDNZGm.js
+import { a as SectionLabel, c as teacher1_default, i as RevealImage, l as teacher2_default, n as MaskText, o as ease, r as Reveal, s as group1_default, t as CircleButton } from "./teacher2-Bj_IXvGm.mjs";
+import { n as toast, t as Toaster } from "../_libs/sonner.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-vC5uWkO7.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Toaster$1 = ({ ...props }) => {
@@ -89,126 +92,6 @@ function Cursor() {
 		})
 	});
 }
-var ease = [
-	.7,
-	0,
-	.2,
-	1
-];
-/** Masked line-by-line headline reveal: movement → pause → movement */
-function MaskText({ lines, className = "", delay = 0, as: Tag = "h2" }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tag, {
-		className,
-		children: lines.map((l, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-			className: "block overflow-hidden pb-[0.08em]",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.span, {
-				className: "block",
-				initial: { y: "110%" },
-				whileInView: { y: 0 },
-				viewport: {
-					once: true,
-					margin: "-10%"
-				},
-				transition: {
-					duration: 1.1,
-					ease,
-					delay: delay + i * .14
-				},
-				children: l
-			})
-		}, i))
-	});
-}
-var fade = {
-	hidden: {
-		opacity: 0,
-		y: 24
-	},
-	show: {
-		opacity: 1,
-		y: 0
-	}
-};
-function Reveal({ children, delay = 0, className = "" }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
-		className,
-		variants: fade,
-		initial: "hidden",
-		whileInView: "show",
-		viewport: {
-			once: true,
-			margin: "-10%"
-		},
-		transition: {
-			duration: .9,
-			ease,
-			delay
-		},
-		children
-	});
-}
-/** Image that unveils like a curtain lifting */
-function RevealImage({ src, alt, className = "", imgClassName = "", w, h, cursor = "VIEW STORY", eager = false }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.figure, {
-		"data-cursor": cursor,
-		className: `group relative overflow-hidden ${className}`,
-		initial: { clipPath: "inset(100% 0 0 0)" },
-		whileInView: { clipPath: "inset(0% 0 0 0)" },
-		viewport: {
-			once: true,
-			margin: "-10%"
-		},
-		transition: {
-			duration: 1.4,
-			ease
-		},
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-			src,
-			alt,
-			width: w,
-			height: h,
-			loading: eager ? "eager" : "lazy",
-			className: `h-full w-full object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-[1.05] ${imgClassName}`
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("figcaption", {
-			className: "eyebrow absolute bottom-2 right-2 bg-ink/70 px-2 py-1 text-[0.55rem] text-ivory/70",
-			children: ""
-		})]
-	});
-}
-/** Circular dance-inspired button */
-function CircleButton({ label, href = "#contact", variant = "light" }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-		href,
-		"data-cursor": "BEGIN",
-		className: "group relative inline-flex items-center gap-5 py-2",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-			className: `relative grid size-16 shrink-0 place-items-center rounded-full border transition-all duration-700 ease-[cubic-bezier(0.7,0,0.2,1)] group-hover:scale-110 sm:size-20 ${variant === "solid" ? "border-maroon bg-maroon text-ivory group-hover:bg-ivory group-hover:text-ink group-hover:border-ivory" : "border-ivory/50 text-ivory group-hover:bg-ivory group-hover:text-ink"}`,
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inset-[-6px] rounded-full border border-gold/0 transition-all duration-700 group-hover:inset-[-12px] group-hover:border-gold/50" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "text-xl transition-transform duration-700 group-hover:-rotate-45",
-				children: "→"
-			})]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-			className: "eyebrow text-[0.72rem] text-ivory transition-[letter-spacing] duration-700 group-hover:tracking-[0.42em]",
-			children: label
-		})]
-	});
-}
-function SectionLabel({ n, label }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "flex items-center gap-4 text-gold",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "display text-2xl italic",
-				children: n
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-px w-12 bg-gold/60" }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "eyebrow",
-				children: label
-			})
-		]
-	});
-}
 var navLinks = [
 	["Academy", "#academy"],
 	["Dance", "#dance"],
@@ -236,9 +119,14 @@ function Nav() {
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 					href: "#top",
-					className: "display text-xl tracking-[0.28em] text-ivory md:text-2xl",
+					"aria-label": "Prashadi Art Academy home",
+					className: "flex shrink-0 items-center",
 					"data-cursor": "",
-					children: "RANGAVEDA"
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: logo1_default,
+						alt: "Prashadi Art Academy — Dance to the beat of your dreams",
+						className: "h-12 w-auto object-contain sm:h-14"
+					})
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
 					"aria-label": "Primary",
@@ -310,9 +198,15 @@ function Nav() {
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center justify-between",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "display text-xl tracking-[0.28em]",
-						children: "RANGAVEDA"
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: "#top",
+						onClick: () => setOpen(false),
+						"aria-label": "Prashadi Art Academy home",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/assets/logo1-Cq1kjqJr.jpg",
+							alt: "Prashadi Art Academy",
+							className: "h-12 w-auto object-contain"
+						})
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						onClick: () => setOpen(false),
 						"aria-label": "Close menu",
@@ -360,111 +254,226 @@ var hero_dancer_default = "/assets/hero-dancer-DOj_i_-Z.jpg";
 var drums_default = "/assets/drums-Cueabjs7.jpg";
 var children_default = "/assets/children-DXHWfd_I.jpg";
 var feet_default = "/assets/feet-CHmmryde.jpg";
+var heroSlides = [
+	{
+		src: "/assets/group4-Crcty231.jpg",
+		alt: "Sri Lankan dancers gathered in traditional costume",
+		label: "The collective / Kandyan movement",
+		theme: "from-[#120c12]/95 via-[#2b161d]/55 to-[#120c12]/20",
+		imageClass: "object-[58%_42%] saturate-[0.72]"
+	},
+	{
+		src: "/assets/group8-EO6l2Nke.jpg",
+		alt: "Young dancers moving together in rehearsal",
+		label: "The next generation / Shared rhythm",
+		theme: "from-[#08151a]/95 via-[#12343a]/50 to-[#08151a]/15",
+		imageClass: "object-[52%_46%] saturate-[0.82] hue-rotate-[8deg]"
+	},
+	{
+		src: group1_default,
+		alt: "A Sri Lankan dancer in traditional costume",
+		label: "The individual / A living archive",
+		theme: "from-[#21100e]/95 via-[#6a2d20]/48 to-[#21100e]/15",
+		imageClass: "object-[50%_32%] saturate-[0.78] sepia-[0.12]"
+	}
+];
 function Hero() {
 	const ref = (0, import_react.useRef)(null);
+	const [activeSlide, setActiveSlide] = (0, import_react.useState)(0);
 	const { scrollYProgress } = useScroll({
 		target: ref,
 		offset: ["start start", "end start"]
 	});
 	const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-	const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1.15]);
+	const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.12]);
+	const slide = heroSlides[activeSlide];
+	(0, import_react.useEffect)(() => {
+		const timer = window.setInterval(() => {
+			setActiveSlide((current) => (current + 1) % heroSlides.length);
+		}, 6500);
+		return () => window.clearInterval(timer);
+	}, []);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		ref,
 		id: "top",
-		className: "grain relative min-h-[100svh] overflow-hidden",
+		className: "grain relative min-h-[100svh] overflow-hidden bg-ink",
 		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "mx-auto grid min-h-[100svh] max-w-[1600px] grid-cols-12 px-5 pb-10 pt-28 md:px-10",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "col-span-1 hidden items-end md:flex",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "eyebrow origin-bottom-left -rotate-90 translate-x-4 whitespace-nowrap text-ivory/60",
-						children: "Sri Lanka \xA0/\xA0 Traditional Dance \xA0/\xA0 Est. 2018"
-					})
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
-					className: "relative col-span-12 h-[62svh] overflow-hidden md:col-span-7 md:col-start-5 md:h-auto",
-					initial: { clipPath: "inset(0 0 100% 0)" },
-					animate: { clipPath: "inset(0 0 0% 0)" },
-					transition: {
-						duration: 1.8,
-						ease
-					},
-					"data-cursor": "VIEW STORY",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.img, {
-						src: hero_dancer_default,
-						alt: "A Kandyan dancer mid-leap in traditional ves costume",
-						width: 1280,
-						height: 1600,
-						style: {
-							y,
-							scale
-						},
-						className: "h-full w-full object-cover object-[50%_25%]"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "eyebrow absolute bottom-3 right-3 bg-ink/70 px-2 py-1 text-[0.55rem] text-ivory/70",
-						children: ""
-					})]
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-				className: "pointer-events-none absolute inset-0 h-full w-full",
-				viewBox: "0 0 1600 1000",
-				preserveAspectRatio: "none",
-				"aria-hidden": true,
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
-					className: "animate-draw",
-					d: "M-20 720 C 300 560, 520 900, 820 640 S 1300 300, 1640 460",
-					fill: "none",
-					stroke: "var(--gold)",
-					strokeOpacity: ".45",
-					strokeWidth: "1"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
-					className: "animate-draw [animation-delay:1s]",
-					d: "M-20 780 C 340 640, 560 960, 860 700 S 1320 380, 1640 540",
-					fill: "none",
-					stroke: "var(--terracotta)",
-					strokeOpacity: ".5",
-					strokeWidth: "1"
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "absolute inset-x-0 bottom-0 mx-auto max-w-[1600px] px-5 pb-10 md:px-10 md:pb-16",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaskText, {
-					as: "h1",
-					delay: .7,
-					lines: ["Where heritage", "finds its rhythm."],
-					className: "display max-w-[14ch] text-[clamp(3.2rem,9.5vw,10rem)] text-ivory md:ml-[8%]"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mt-8 flex flex-col gap-8 md:ml-[8%] md:flex-row md:items-end md:justify-between",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
-						initial: { opacity: 0 },
-						animate: { opacity: 1 },
-						transition: {
-							delay: 1.6,
-							duration: 1
-						},
-						className: "max-w-sm text-sm leading-relaxed text-ivory/75",
-						children: "Sri Lankan traditional dance, presented for a new generation. Kandyan, Low Country and Sabaragamuwa — taught to children, teenagers and young dancers."
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "absolute inset-0",
+				"data-cursor": "VIEW STORY",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, {
+					initial: false,
+					mode: "sync",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+						className: "absolute inset-0",
 						initial: {
 							opacity: 0,
-							y: 20
+							clipPath: "inset(0 0 0 100%)"
 						},
 						animate: {
 							opacity: 1,
-							y: 0
+							clipPath: "inset(0 0 0 0%)"
+						},
+						exit: {
+							opacity: 0,
+							clipPath: "inset(0 100% 0 0)"
 						},
 						transition: {
-							delay: 1.9,
-							duration: 1,
+							duration: 1.45,
 							ease
 						},
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleButton, {
-							label: "Explore the academy",
-							href: "#academy"
-						})
-					})]
-				})]
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.img, {
+								src: slide.src,
+								alt: slide.alt,
+								width: 1600,
+								height: 1066,
+								style: {
+									y,
+									scale
+								},
+								initial: {
+									scale: 1.14,
+									x: "2%"
+								},
+								animate: {
+									scale: 1,
+									x: "0%"
+								},
+								transition: {
+									duration: 7,
+									ease: "linear"
+								},
+								className: `h-full w-full object-cover ${slide.imageClass}`
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `absolute inset-0 bg-gradient-to-r ${slide.theme}` }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-[linear-gradient(0deg,rgba(13,11,16,0.9)_0%,transparent_42%,rgba(13,11,16,0.3)_100%)]" })
+						]
+					}, slide.src)
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] flex-col px-5 pb-8 pt-28 md:px-10 md:pb-10",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-start justify-between border-t border-ivory/20 pt-4",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "eyebrow text-ivory/70",
+							children: "Prashadi Art Academy"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "eyebrow hidden text-right text-ivory/60 sm:block",
+							children: "Kurunegala, Sri Lanka"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-auto grid grid-cols-12 items-end gap-y-10",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "col-span-12 md:col-span-9",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+								className: "eyebrow mb-5 flex items-center gap-3 text-gold",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-px w-10 bg-gold" }), "A living practice / Est. 2018"]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaskText, {
+								as: "h1",
+								delay: .7,
+								lines: [
+									"Where heritage",
+									"finds its",
+									"rhythm."
+								],
+								className: "display max-w-[9ch] text-[clamp(4.6rem,11.5vw,12rem)] text-ivory"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "col-span-12 flex flex-col gap-8 md:col-span-3 md:items-end",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
+								initial: {
+									opacity: 0,
+									y: 16
+								},
+								animate: {
+									opacity: 1,
+									y: 0
+								},
+								transition: {
+									delay: 1.6,
+									duration: 1
+								},
+								className: "max-w-xs text-sm leading-relaxed text-ivory/75 md:text-right",
+								children: "Traditional dance, retold with precision, pride and a pulse for the next generation."
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+								initial: {
+									opacity: 0,
+									scale: .8
+								},
+								animate: {
+									opacity: 1,
+									scale: 1
+								},
+								transition: {
+									delay: 1.9,
+									duration: 1,
+									ease
+								},
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleButton, {
+									label: "Enter the academy",
+									href: "#academy"
+								})
+							})]
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-10 flex items-center gap-4 border-t border-ivory/25 pt-4",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "eyebrow min-w-fit text-[0.58rem] text-gold",
+								children: slide.label
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-px flex-1 bg-ivory/30" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-3",
+								"aria-label": "Hero image selection",
+								children: [heroSlides.map((heroSlide, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+									type: "button",
+									"aria-label": `Show hero image ${index + 1}`,
+									"aria-pressed": activeSlide === index,
+									onClick: () => setActiveSlide(index),
+									className: "group flex items-center gap-2 py-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block h-px transition-all duration-500 ${activeSlide === index ? "w-8 bg-gold" : "w-3 bg-ivory/40 group-hover:bg-ivory"}` }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "sr-only",
+										children: heroSlide.label
+									})]
+								}, heroSlide.src)), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									className: "display ml-1 text-xl italic text-ivory/70",
+									children: [
+										String(activeSlide + 1).padStart(2, "0"),
+										" / ",
+										String(heroSlides.length).padStart(2, "0")
+									]
+								})]
+							})
+						]
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "pointer-events-none absolute bottom-[22%] left-[3.3%] z-10 hidden md:block",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "eyebrow origin-bottom-left -rotate-90 whitespace-nowrap text-ivory/60",
+					children: "Sri Lanka\xA0\xA0/\xA0\xA0Traditional Dance\xA0\xA0/\xA0\xA0A living archive"
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+				className: "pointer-events-none absolute inset-0 z-10 h-full w-full",
+				viewBox: "0 0 1600 1000",
+				preserveAspectRatio: "none",
+				"aria-hidden": true,
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+					className: "animate-draw",
+					d: "M-20 780 C 300 650, 520 920, 820 700 S 1300 380, 1640 500",
+					fill: "none",
+					stroke: "var(--gold)",
+					strokeOpacity: ".4",
+					strokeWidth: "1"
+				})
 			})
 		]
 	});
@@ -888,85 +897,118 @@ function Principles() {
 		})
 	});
 }
-var teachers = [
-	{
-		name: "Teacher Name",
-		role: "Kandyan dance · Lead instructor",
-		yrs: "— years teaching",
-		bio: "Placeholder profile. Replace with the teacher's real biography, training lineage and photograph."
-	},
-	{
-		name: "Teacher Name",
-		role: "Low Country dance",
-		yrs: "— years teaching",
-		bio: "Placeholder profile. Replace with the teacher's real biography and photograph."
-	},
-	{
-		name: "Teacher Name",
-		role: "Geta bera & drumming",
-		yrs: "— years teaching",
-		bio: "Placeholder profile. Replace with the drummer's real biography and photograph."
-	}
-];
-function PortraitPlaceholder({ label }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "relative grid aspect-[3/4] place-items-center overflow-hidden border border-ink/15 bg-ivory shadow-sm transition-all duration-500 hover:shadow-md",
-		"data-cursor": "VIEW STORY",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-5 border border-maroon/25" }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 opacity-15 [background-image:repeating-linear-gradient(135deg,transparent_0_14px,color-mix(in_oklab,var(--maroon)_50%,transparent)_14px_15px)]" }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "eyebrow relative bg-maroon px-3 py-2 text-[0.6rem] tracking-widest text-ivory",
-				children: label
-			})
-		]
-	});
-}
 function Teachers() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "relative w-full bg-ivory py-28 text-ink md:py-40",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 			className: "eyebrow absolute left-4 top-40 hidden origin-top-left rotate-90 translate-x-4 whitespace-nowrap text-maroon md:block",
-			children: "Meet the people behind the movement"
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			children: "The founder behind the movement"
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 			className: "mx-auto max-w-[1600px] px-5 md:px-16",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex flex-col justify-between gap-6 md:flex-row md:items-end",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaskText, {
-					lines: ["The hands that", "pass it on."],
-					className: "display text-[clamp(2.8rem,6vw,6rem)] text-ink"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "eyebrow text-maroon md:hidden",
-					children: "Meet the people behind the movement"
-				})]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-16 grid gap-10 md:grid-cols-12",
-				children: teachers.map((t, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Reveal, {
-					delay: i * .12,
-					className: i === 0 ? "md:col-span-5" : i === 1 ? "md:col-span-3 md:col-start-7 md:mt-32" : "md:col-span-3 md:mt-12",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortraitPlaceholder, { label: "Portrait placeholder" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "mt-5 border-t border-ink/20 pt-4",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-								className: "display text-3xl text-ink",
-								children: t.name
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "eyebrow mt-2 text-terracotta",
-								children: t.role
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "eyebrow mt-1 text-ink/50",
-								children: t.yrs
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "mt-3 max-w-xs text-sm text-ink/75",
-								children: t.bio
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "grid gap-16 md:grid-cols-12 md:gap-10",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "md:col-span-7",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(RevealImage, {
+						src: teacher1_default,
+						alt: "Founder portrait",
+						w: 800,
+						h: 1066,
+						className: "aspect-[3/4] w-full"
+					})
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-col justify-center md:col-span-5 md:pl-10",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionLabel, {
+							n: "05",
+							label: "The founder"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-12",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaskText, {
+								lines: ["The hand that", "guides."],
+								className: "display text-[clamp(2.8rem,5vw,5rem)] text-ink"
 							})
-						]
-					})]
-				}, i))
-			})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Reveal, {
+							className: "mt-8",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+									className: "display text-4xl text-ink",
+									children: "Guru [Name]"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "eyebrow mt-3 text-terracotta",
+									children: "Founder · Lead Instructor"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "mt-6 max-w-md text-base leading-relaxed text-ink/80",
+									children: "Trained in the classical Kandyan tradition under renowned masters, she brings over two decades of experience to the academy. Her vision preserves ancient techniques while inspiring the next generation of dancers."
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "mt-10 w-48",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(RevealImage, {
+										src: teacher2_default,
+										alt: "Teacher teaching",
+										w: 640,
+										h: 480,
+										className: "aspect-[4/3] w-full"
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "mt-12 flex w-full items-center opacity-40",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "size-1.5 rotate-45 bg-maroon" }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "h-px flex-1 bg-maroon" }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "size-1.5 rotate-45 bg-maroon" })
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "mt-10 flex gap-8",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "display text-3xl text-ink",
+											children: "25+"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "eyebrow mt-1 text-[0.65rem] text-ink/60",
+											children: "Teaching"
+										})] }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "display text-3xl text-ink",
+											children: "500+"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "eyebrow mt-1 text-[0.65rem] text-ink/60",
+											children: "Students"
+										})] }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "display text-3xl text-ink",
+											children: "3"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "eyebrow mt-1 text-[0.65rem] text-ink/60",
+											children: "National awards"
+										})] })
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+									to: "/teacher",
+									"data-cursor": "VIEW STORY",
+									className: "group mt-12 flex items-center gap-5",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "grid size-14 shrink-0 place-items-center border border-ink/30 text-ink transition-all duration-700 group-hover:bg-maroon group-hover:text-ivory group-hover:border-maroon",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "text-lg transition-transform duration-700 group-hover:-rotate-45",
+											children: "→"
+										})
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "eyebrow text-[0.72rem] text-ink/80 transition-[letter-spacing] duration-700 group-hover:tracking-[0.42em]",
+										children: "Discover her journey"
+									})]
+								})
+							]
+						})
+					]
+				})]
+			})
 		})]
 	});
 }
@@ -1013,7 +1055,7 @@ function Events() {
 					className: "col-span-12 md:col-span-4",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionLabel, {
-							n: "05",
+							n: "06",
 							label: "Performances"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaskText, {
@@ -1101,7 +1143,7 @@ function Gallery() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "display text-2xl italic",
-							children: "06"
+							children: "07"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-px w-12 bg-maroon/40" }),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -1383,35 +1425,23 @@ function Contact() {
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "eyebrow text-clay",
 										children: "Studio"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dd", {
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
 										className: "mt-2 text-ivory/80",
-										children: [
-											"Address to be confirmed",
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-											"Colombo, Sri Lanka"
-										]
+										children: "Kurunegala, Sri Lanka"
 									})] }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "eyebrow text-clay",
 										children: "Talk to us"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dd", {
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
 										className: "mt-2 text-ivory/80",
-										children: [
-											"+94 00 000 0000",
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-											"hello@rangaveda.lk"
-										]
+										children: "Send an enquiry using the form"
 									})] }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "eyebrow text-clay",
 										children: "Classes"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dd", {
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
 										className: "mt-2 text-ivory/80",
-										children: [
-											"Wed & Thu · 4–7 pm",
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-											"Sat · 8 am–1 pm"
-										]
+										children: "Contact us for current class times"
 									})] }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "eyebrow text-clay",
@@ -1441,10 +1471,10 @@ function Contact() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "mt-10 aspect-[16/9] overflow-hidden border border-border grayscale",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("iframe", {
-									title: "Academy location map",
+									title: "Prashadi Art Academy location in Kurunegala",
 									loading: "lazy",
 									className: "h-full w-full",
-									src: "https://www.google.com/maps?q=Colombo,Sri+Lanka&output=embed"
+									src: "https://www.google.com/maps?q=Kurunegala,Sri+Lanka&output=embed"
 								})
 							})
 						]
@@ -1555,8 +1585,8 @@ function Contact() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex flex-col gap-8 py-10 md:flex-row md:items-end md:justify-between",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "display text-[clamp(3rem,12vw,12rem)] leading-none tracking-[0.12em] text-ivory/90",
-						children: "RANGAVEDA"
+						className: "display text-[clamp(2.5rem,10vw,9rem)] leading-none tracking-[0.04em] text-ivory/90",
+						children: "Prashadi Art Academy"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "flex flex-wrap gap-x-6 gap-y-2 pb-4",
 						children: navLinks.map(([l, h]) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
@@ -1568,7 +1598,7 @@ function Contact() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "eyebrow pb-8 text-[0.6rem] text-ivory/40",
-					children: "© RANGAVEDA Sri Lankan Traditional Dance Academy"
+					children: "© Prashadi Art Academy · Kurunegala, Sri Lanka"
 				})
 			]
 		})
