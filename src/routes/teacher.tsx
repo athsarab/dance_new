@@ -9,6 +9,7 @@ import {
   CircleButton,
   ease,
 } from "@/components/site/primitives";
+import { FloatingSocialDock, MobileSocialButton, SocialIconRow } from "@/components/site/SocialLinks";
 
 import t1 from "@/assets/new/teacher5.jpg";
 import t2 from "@/assets/new/teacher2.jpg";
@@ -38,6 +39,8 @@ function TeacherPage() {
 
   return (
     <div className="bg-ink text-ivory">
+      <FloatingSocialDock />
+      <MobileSocialButton />
       {/* 1. Hero / Intro Banner */}
       <section className="relative h-[90vh] w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -221,16 +224,22 @@ function TeacherPage() {
           className="display text-4xl sm:text-6xl text-ivory mb-12"
         />
         <Reveal delay={0.2}>
-          <div className="flex flex-col sm:flex-row gap-8 items-center">
-            <Link to="/" className="group relative inline-flex items-center gap-5 py-2">
-              <span className="relative grid size-16 shrink-0 place-items-center rounded-full border border-ivory/50 text-ivory transition-all duration-700 ease-[cubic-bezier(0.7,0,0.2,1)] group-hover:scale-110 group-hover:bg-ivory group-hover:text-ink sm:size-20">
-                <span className="text-xl transition-transform duration-700 group-hover:-translate-x-1">←</span>
-              </span>
-              <span className="eyebrow text-[0.72rem] text-ivory transition-[letter-spacing] duration-700 group-hover:tracking-[0.42em]">
-                RETURN HOME
-              </span>
-            </Link>
-            <CircleButton label="CONTACT US" href="/#contact" variant="solid" />
+          <div className="flex flex-col items-center gap-10">
+            <div className="flex flex-col sm:flex-row gap-8 items-center">
+              <Link to="/" className="group relative inline-flex items-center gap-5 py-2">
+                <span className="relative grid size-16 shrink-0 place-items-center rounded-full border border-ivory/50 text-ivory transition-all duration-700 ease-[cubic-bezier(0.7,0,0.2,1)] group-hover:scale-110 group-hover:bg-ivory group-hover:text-ink sm:size-20">
+                  <span className="text-xl transition-transform duration-700 group-hover:-translate-x-1">←</span>
+                </span>
+                <span className="eyebrow text-[0.72rem] text-ivory transition-[letter-spacing] duration-700 group-hover:tracking-[0.42em]">
+                  RETURN HOME
+                </span>
+              </Link>
+              <CircleButton label="CONTACT US" href="/#contact" variant="solid" />
+            </div>
+            <div className="flex flex-col items-center gap-3 pt-4 border-t border-ivory/15 w-full max-w-xs">
+              <span className="eyebrow text-gold/90 text-[0.65rem]">Follow the Academy</span>
+              <SocialIconRow />
+            </div>
           </div>
         </Reveal>
       </section>

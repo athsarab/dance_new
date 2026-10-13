@@ -159,21 +159,27 @@ export function Hero() {
 /* ---------------- STATEMENT + ROOTS ---------------- */
 export function Roots() {
   return (
-    <section id="academy" className="relative w-full bg-ink py-28 md:py-44">
+    <section id="academy" className="relative w-full bg-ink py-20 md:py-28">
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
-      <div className="grid grid-cols-12 gap-y-14">
-        <MaskText
-          lines={["Tradition", "is not", "still."]}
-          className="display col-span-12 text-[clamp(4rem,13vw,13rem)] italic text-clay md:col-span-8"
-        />
-        <Reveal className="col-span-12 self-end md:col-span-3 md:col-start-10" delay={0.3}>
-          <p className="display text-2xl leading-snug text-ivory">
+      <div className="grid grid-cols-12 items-end gap-y-8 md:gap-x-8">
+        <div className="col-span-12 md:col-span-8">
+          <p className="eyebrow mb-5 flex items-center gap-3 text-gold">
+            <span className="h-px w-10 bg-gold" />
+            A practice passed hand to hand
+          </p>
+          <h2 className="display text-[clamp(3.8rem,9.5vw,9rem)] italic leading-[0.92] text-clay">
+            <span className="block">Tradition is</span>
+            <span className="block">not still.</span>
+          </h2>
+        </div>
+        <Reveal className="col-span-10 col-start-3 border-l border-gold/50 pl-5 md:col-span-3 md:col-start-10 md:mb-2 md:pl-6" delay={0.3}>
+          <p className="display text-xl leading-snug text-ivory md:text-2xl">
             Passed from teacher to student, movement becomes memory.
           </p>
         </Reveal>
       </div>
 
-      <div className="motif-border my-24 opacity-60" />
+      <div className="motif-border my-16 opacity-60 md:my-20" />
 
       <div className="grid grid-cols-12 gap-y-12 md:gap-x-10">
         <div className="col-span-12 md:col-span-5">
@@ -219,13 +225,13 @@ export function DanceForms() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-62%"]);
 
   const Panel = ({ f }: { f: (typeof forms)[number] }) => (
-    <article data-cursor="EXPLORE" className="group relative w-[80vw] shrink-0 md:w-[38vw]">
-      <div className="relative aspect-[3/4] overflow-hidden">
+    <article data-cursor="EXPLORE" className="group relative flex w-[80vw] shrink-0 flex-col md:w-[38vw]">
+      <div className="relative aspect-[3/4] overflow-hidden md:aspect-auto md:min-h-0 md:flex-1">
         <img src={f.img} alt={f.t} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-all duration-[1.4s] ease-out group-hover:scale-110 group-hover:opacity-0" />
         <img src={f.alt} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-0 transition-all duration-[1.4s] ease-out group-hover:scale-100 group-hover:opacity-100" />
         <span className="display absolute left-5 top-4 text-6xl italic text-ivory/90">{f.n}</span>
       </div>
-      <div className="mt-6 flex items-start justify-between gap-6 border-t border-ivory/20 pt-5">
+      <div className="mt-6 flex shrink-0 items-start justify-between gap-6 border-t border-ivory/20 pt-5">
         <div>
           <h3 className="display text-3xl md:text-4xl text-ivory">{f.t}</h3>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory/75">{f.d}</p>
@@ -239,12 +245,12 @@ export function DanceForms() {
     <>
       {/* desktop: scroll-driven horizontal */}
       <section id="dance" ref={ref} className="relative hidden h-[300vh] bg-maroon md:block">
-        <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-          <div className="mx-auto mb-10 flex w-full max-w-[1600px] items-end justify-between px-10">
+        <div className="sticky top-0 flex h-screen flex-col overflow-hidden pb-8 pt-6">
+          <div className="mx-auto mb-6 flex w-full max-w-[1600px] shrink-0 items-end justify-between px-10">
             <h2 className="display text-[clamp(3rem,6vw,6.5rem)]">The language<br /><em className="text-gold">of movement</em></h2>
             <SectionLabel n="02" label="Dance forms" />
           </div>
-          <motion.div style={{ x }} className="flex gap-10 pl-10">
+          <motion.div style={{ x }} className="flex min-h-0 flex-1 gap-10 pl-10">
             {forms.map((f) => <Panel key={f.n} f={f} />)}
           </motion.div>
         </div>

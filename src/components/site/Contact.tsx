@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { SectionLabel } from "./primitives";
 import { navLinks } from "./Nav";
+import { SocialCardsGrid, SocialIconRow } from "./SocialLinks";
 
 const field = "w-full border-0 border-b border-ivory/25 bg-transparent py-4 text-ivory placeholder:text-ivory/35 focus:border-gold focus:outline-none transition-colors";
 
@@ -18,7 +19,13 @@ export function Contact() {
             <div><dt className="eyebrow text-clay">Studio</dt><dd className="mt-2 text-ivory/80">Kurunegala, Sri Lanka</dd></div>
             <div><dt className="eyebrow text-clay">Talk to us</dt><dd className="mt-2 text-ivory/80">Send an enquiry using the form</dd></div>
             <div><dt className="eyebrow text-clay">Classes</dt><dd className="mt-2 text-ivory/80">Contact us for current class times</dd></div>
-            <div><dt className="eyebrow text-clay">Follow</dt><dd className="mt-2 flex flex-col text-ivory/80"><a className="link-dance w-fit" href="#">Instagram</a><a className="link-dance w-fit" href="#">Facebook</a><a className="link-dance w-fit" href="#">YouTube</a></dd></div>
+            <div>
+              <dt className="eyebrow text-clay">Follow & Chat</dt>
+              <dd className="mt-2">
+                <p className="text-xs text-ivory/70 mb-2">Reels, updates & WhatsApp</p>
+                <SocialIconRow />
+              </dd>
+            </div>
           </dl>
           <div className="mt-10 aspect-[16/9] overflow-hidden border border-border grayscale">
             <iframe title="Prashadi Art Academy location in Kurunegala" loading="lazy" className="h-full w-full" src="https://www.google.com/maps?q=Kurunegala,Sri+Lanka&output=embed" />
@@ -54,11 +61,31 @@ export function Contact() {
         </form>
       </div>
 
-      <div className="motif-border mt-28 opacity-50" />
+      {/* Eye-catching Social Channels Feature */}
+      <div className="mt-24 border-t border-ivory/15 pt-16">
+        <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="eyebrow text-gold">Follow Our Rhythm</p>
+            <h3 className="display mt-2 text-3xl md:text-5xl text-ivory">Stay connected across <em className="text-gold">every platform.</em></h3>
+          </div>
+          <p className="max-w-md text-xs sm:text-sm text-ivory/70">
+            Follow student journeys, Guru recitals, festival celebrations, and contact us directly on social media.
+          </p>
+        </div>
+        <SocialCardsGrid />
+      </div>
+
+      <div className="motif-border mt-24 opacity-50" />
       <div className="flex flex-col gap-8 py-10 md:flex-row md:items-end md:justify-between">
-        <p className="display text-[clamp(2.5rem,10vw,9rem)] leading-none tracking-[0.04em] text-ivory/90">Prashadi Art Academy</p>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 pb-4">
-          {navLinks.map(([l, h]) => <a key={l} href={h} className="link-dance eyebrow text-ivory/60">{l}</a>)}
+        <div>
+          <p className="display text-[clamp(2.5rem,10vw,9rem)] leading-none tracking-[0.04em] text-ivory/90">Prashadi Art Academy</p>
+          <p className="eyebrow mt-3 text-[0.68rem] text-gold/80">Where Heritage Finds Its Rhythm · Est. 2018</p>
+        </div>
+        <div className="flex flex-col gap-4 items-start md:items-end pb-4">
+          <SocialIconRow />
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {navLinks.map(([l, h]) => <a key={l} href={h} className="link-dance eyebrow text-ivory/60">{l}</a>)}
+          </div>
         </div>
       </div>
       <p className="eyebrow pb-8 text-[0.6rem] text-ivory/40">© Prashadi Art Academy · Kurunegala, Sri Lanka</p>

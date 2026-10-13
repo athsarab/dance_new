@@ -5,6 +5,7 @@ import { Nav } from "@/components/site/Nav";
 import { DanceForms, Events, FinalCta, Gallery, Hero, NextGeneration, Principles, Roots, Teachers } from "@/components/site/Sections";
 import { Rhythm } from "@/components/site/Rhythm";
 import { Contact } from "@/components/site/Contact";
+import { FloatingSocialDock, MobileSocialButton } from "@/components/site/SocialLinks";
 
 const title = "Prashadi Art Academy | Traditional Dance Classes in Kurunegala";
 const description =
@@ -39,6 +40,8 @@ function Index() {
     <>
       <Cursor />
       <Nav />
+      <FloatingSocialDock />
+      <MobileSocialButton />
       <main>
         <Hero />
         <Roots />
