@@ -10,7 +10,7 @@ import {
   ease,
 } from "@/components/site/primitives";
 
-import t1 from "@/assets/new/teacher1.jpg";
+import t1 from "@/assets/new/teacher5.jpg";
 import t2 from "@/assets/new/teacher2.jpg";
 import t3 from "@/assets/new/teacher3.jpg";
 import t4 from "@/assets/new/teacher4.jpg";
