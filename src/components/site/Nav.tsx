@@ -51,9 +51,6 @@ export function Nav() {
             </ul>
           </nav>
           <div className="flex items-center gap-4 sm:gap-5">
-            <div className="hidden xl:block">
-              <SocialIconRow />
-            </div>
             <a
               href="#contact"
               className="eyebrow hidden border border-gold/60 px-5 py-3 text-gold transition-colors duration-500 hover:bg-gold hover:text-ink sm:inline-block"
