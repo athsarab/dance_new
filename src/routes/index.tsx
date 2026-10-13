@@ -15,7 +15,6 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["DanceSchool", "EducationalOrganization"],
   name: "Prashadi Art Academy",
-  slogan: "Where Heritage Finds Its Rhythm.",
   foundingDate: "2018",
   address: { "@type": "PostalAddress", addressLocality: "Kurunegala", addressCountry: "LK" },
 };

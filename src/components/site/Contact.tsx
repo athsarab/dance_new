@@ -79,7 +79,6 @@ export function Contact() {
       <div className="flex flex-col gap-8 py-10 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="display text-[clamp(2.5rem,10vw,9rem)] leading-none tracking-[0.04em] text-ivory/90">Prashadi Art Academy</p>
-          <p className="eyebrow mt-3 text-[0.68rem] text-gold/80">Where Heritage Finds Its Rhythm · Est. 2018</p>
         </div>
         <div className="flex flex-col gap-4 items-start md:items-end pb-4">
           <SocialIconRow />

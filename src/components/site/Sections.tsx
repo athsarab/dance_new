@@ -97,12 +97,7 @@ export function Hero() {
               <span className="h-px w-10 bg-gold" />
               A living practice / Est. 2018
             </p>
-            <MaskText
-              as="h1"
-              delay={0.7}
-              lines={["Where heritage", "finds its", "rhythm."]}
-              className="display max-w-[9ch] text-[clamp(4.6rem,11.5vw,12rem)] text-ivory"
-            />
+
           </div>
           <div className="col-span-12 flex flex-col gap-8 md:col-span-3 md:items-end">
             <motion.p

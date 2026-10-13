@@ -11029,4 +11029,4 @@ function useSpring(source, options = {}) {
 	return useFollow(source, options, attachSpring);
 }
 //#endregion
-export { motion as a, useScroll as i, useTransform as n, AnimatePresence as o, useMotionValue as r, performance_default as s, useSpring as t };
+export { motion as a, useScroll as i, useTransform as n, AnimatePresence as o, useMotionValue as r, useSpring as t };
