@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { ease } from "./primitives";
 import logo from "@/assets/logo1.jpg";
+import { SocialIconRow } from "./SocialLinks";
 
 export const navLinks = [
   ["Academy", "#academy"],
@@ -49,7 +50,10 @@ export function Nav() {
               ))}
             </ul>
           </nav>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-4 sm:gap-5">
+            <div className="hidden xl:block">
+              <SocialIconRow />
+            </div>
             <a
               href="#contact"
               className="eyebrow hidden border border-gold/60 px-5 py-3 text-gold transition-colors duration-500 hover:bg-gold hover:text-ink sm:inline-block"
@@ -89,7 +93,7 @@ export function Nav() {
               />
             ))}
             <motion.div
-              className="absolute inset-0 flex flex-col justify-between px-6 py-6"
+              className="absolute inset-0 flex flex-col justify-between overflow-y-auto px-6 py-6"
               variants={{ closed: { opacity: 0 }, open: { opacity: 1, transition: { delay: 0.45 } } }}
             >
               <div className="flex items-center justify-between">
@@ -100,27 +104,33 @@ export function Nav() {
                   Close
                 </button>
               </div>
-              <ul className="space-y-2">
+              <ul className="space-y-2 py-4">
                 {navLinks.map(([l, h], i) => (
                   <li key={l} className="overflow-hidden">
                     <motion.a
                       href={h}
                       onClick={() => setOpen(false)}
-                      className="display flex items-baseline gap-4 py-1 text-5xl"
+                      className="display flex items-baseline gap-4 py-1 text-4xl sm:text-5xl"
                       variants={{
                         closed: { y: "100%" },
                         open: { y: 0, transition: { duration: 0.8, ease, delay: 0.5 + i * 0.06 } },
                       }}
                     >
-                      <span className="eyebrow text-gold">0{i + 1}</span>
+                      <span className="eyebrow text-gold text-xs">0{i + 1}</span>
                       {l}
                     </motion.a>
                   </li>
                 ))}
               </ul>
-              <a href="#contact" onClick={() => setOpen(false)} className="eyebrow border border-gold py-4 text-center text-gold">
-                Join a class →
-              </a>
+              <div className="space-y-4 pt-2">
+                <a href="#contact" onClick={() => setOpen(false)} className="eyebrow block border border-gold py-3.5 text-center text-gold">
+                  Join a class →
+                </a>
+                <div className="flex flex-col items-center gap-2 border-t border-ivory/15 pt-3">
+                  <span className="eyebrow text-[0.62rem] text-gold/80">Connect With Us</span>
+                  <SocialIconRow />
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}
