@@ -10,6 +10,9 @@ import group4 from "@/assets/new/group4.jpg";
 import group8 from "@/assets/new/group8.jpg";
 import teacher1 from "@/assets/new/teacher7.jpg";
 import teacher2 from "@/assets/new/teacher2.jpg";
+import child1 from "@/assets/new/child1.jpg";
+import group2 from "@/assets/new/p1.jpg";
+import group6 from "@/assets/new/group6.jpg";
 import { CircleButton, MaskText, Reveal, RevealImage, SectionLabel, ease } from "./primitives";
 
 /* ---------------- HERO ---------------- */
@@ -193,8 +196,8 @@ export function Roots() {
           </Reveal>
         </div>
         <div className="col-span-12 grid grid-cols-6 gap-4 md:col-span-7">
-          <RevealImage src={drums} alt="Hands playing a geta bera drum" w={1408} h={1024} className="col-span-6 aspect-[4/3]" />
-          <RevealImage src={feet} alt="Ankle bells on a dancer's feet" w={1024} h={1280} className="col-span-3 col-start-4 -mt-24 aspect-[4/5] border-8 border-ink md:-mt-40" />
+          <RevealImage src={group6} alt="Hands playing a geta bera drum" w={1408} h={1024} className="col-span-6 aspect-[4/3]" />
+          <RevealImage src={group2} alt="Ankle bells on a dancer's feet" w={1024} h={1280} className="col-span-3 col-start-4 -mt-24 aspect-[4/5] border-8 border-ink md:-mt-40" />
         </div>
       </div>
       </div>
@@ -205,9 +208,9 @@ export function Roots() {
 /* ---------------- DANCE FORMS (horizontal) ---------------- */
 const forms = [
   { n: "01", t: "Kandyan Dance", d: "The hill-country form. Leaps, spins and controlled strength, carried by the geta bera.", img: hero, alt: hero },
-  { n: "02", t: "Low Country Dance", d: "From the southern coast — masked, dramatic and rooted in ritual storytelling.", img: feet, alt: drums },
-  { n: "03", t: "Sabaragamuwa Dance", d: "Graceful and grounded, shaped by the rhythms of the dawula drum.", img: children, alt: feet },
-  { n: "04", t: "Traditional Drumming", d: "Learn the beat every dancer listens for. Rhythm, timing and call-and-response.", img: drums, alt: hero },
+  { n: "02", t: "Low Country Dance", d: "From the southern coast — masked, dramatic and rooted in ritual storytelling.", img: group2, alt: group6 },
+  { n: "03", t: "Sabaragamuwa Dance", d: "Graceful and grounded, shaped by the rhythms of the dawula drum.", img: child1, alt: group2 },
+  { n: "04", t: "Traditional Drumming", d: "Learn the beat every dancer listens for. Rhythm, timing and call-and-response.", img: group6, alt: hero },
 ];
 
 export function DanceForms() {
@@ -262,8 +265,8 @@ export function DanceForms() {
 
 /* ---------------- NEXT GENERATION ---------------- */
 const groups = [
-  { name: "Little Rhythm", ages: "Ages 4–7", img: children, copy: "Playful first steps. Counting beats, balance, posture and the joy of moving to the drum.", sched: "Saturdays · 45 min" },
-  { name: "Young Performers", ages: "Ages 8–12", img: feet, copy: "Foundational Kandyan vocabulary, coordination and first stage experience in academy showcases.", sched: "Sat & Wed · 60 min" },
+  { name: "Little Rhythm", ages: "Ages 4–7", img: child1, copy: "Playful first steps. Counting beats, balance, posture and the joy of moving to the drum.", sched: "Saturdays · 45 min" },
+  { name: "Young Performers", ages: "Ages 8–12", img: group2, copy: "Foundational Kandyan vocabulary, coordination and first stage experience in academy showcases.", sched: "Sat & Wed · 60 min" },
   { name: "Future Artists", ages: "Ages 13–17", img: hero, copy: "Advanced technique, stamina and expression — preparing for performances and graded progress.", sched: "Sat & Thu · 90 min" },
 ];
 
@@ -556,9 +559,9 @@ export function Gallery() {
           <div className="col-span-2 flex flex-col justify-end md:col-span-3 md:col-start-7">
             <p className="display text-lg italic text-ink/80 md:text-2xl">“The leap is earned in the hundredth repetition.”</p>
           </div>
-          <RevealImage src={feet} alt="Ankle bells close-up" w={1024} h={1280} className="col-span-3 aspect-[3/4] shadow-lg md:col-span-3 md:col-start-10 md:-mt-40" />
-          <RevealImage src={children} alt="Children practising" w={1408} h={1024} className="col-span-6 aspect-[16/10] shadow-2xl md:col-span-7 md:col-start-3 md:-mt-16 md:z-10 md:border-[10px] md:border-ivory" />
-          <RevealImage src={drums} alt="Drummer's hands" w={1408} h={1024} className="col-span-3 aspect-square shadow-lg md:col-span-3 md:col-start-10 md:mt-24" />
+          <RevealImage src={group2} alt="Ankle bells close-up" w={1024} h={1280} className="col-span-3 aspect-[3/4] shadow-lg md:col-span-3 md:col-start-10 md:-mt-40" />
+          <RevealImage src={child1} alt="Children practising" w={1408} h={1024} className="col-span-6 aspect-[16/10] shadow-2xl md:col-span-7 md:col-start-3 md:-mt-16 md:z-10 md:border-[10px] md:border-ivory" />
+          <RevealImage src={group6} alt="Drummer's hands" w={1408} h={1024} className="col-span-3 aspect-square shadow-lg md:col-span-3 md:col-start-10 md:mt-24" />
         </div>
       </div>
       <div className="mt-24 overflow-hidden border-y border-ink/20 bg-ink py-6 text-ivory">
